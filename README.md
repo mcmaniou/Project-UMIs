@@ -49,11 +49,11 @@ The later has the following inputs:
 - ```countsCutoff```: min read counts per UMI, for initial data cleaning.
 - ```UMIdistance```: max UMI distance for UMI merging.
 - ```sequenceDistance```: max sequence distance for UMI merging.
-- ```filepath1```: filepath of the Read1 input file. 
-- ```filepath2```: filepath of the Read2 input file.
+- ```inputsFolder```: name or filepath of the inputs folder.
 - ```outputsFolder```: name or filepath of the outputs folder.
  
-The input data must be provided in fastq files and it is assumed that the UMI is placed at the beginning of each sequence.
+The input data must be provided in fastq files and it is assumed that the UMI is placed at the beginning of each sequence. The input files can belong to different experiments, but must belong to the same library and fulfil the same input parameters described above.
+
 
 ### Outputs 
 The output data are stored also in fastq files, named the same as the input files with an added ```_corrected``` suffix and the name of the folder can be provided by the user. The files contain the corrected sequences (without the UMI) and their quality. It is worth mentioning that the new sequence ID is constructed by combining the ID of one of the input sequences, that has that same UMI, and the UMI itself.
