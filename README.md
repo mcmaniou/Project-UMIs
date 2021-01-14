@@ -55,6 +55,7 @@ The later has the following inputs:
  
 The input data must be provided in fastq files and it is assumed that the UMI is placed at the beginning of each sequence.
 
+### Outputs 
 The output data are stored also in fastq files, named the same as the input files with an added ```_corrected``` suffix and the name of the folder can be provided by the user. The files contain the corrected sequences (without the UMI) and their quality. It is worth mentioning that the new sequence ID is constructed by combining the ID of one of the input sequences, that has that same UMI, and the UMI itself.
 
 The framework also produces a ```summary_table.csv``` with all the information of the output fastq files and extra information, that can help return from the output sequences to their corresponding input sequences.
