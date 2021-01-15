@@ -50,15 +50,15 @@ The later has the following inputs:
 - ```UMIdistance```: max UMI distance for UMI merging.
 - ```sequenceDistance```: max sequence distance for UMI merging.
 - ```inputsFolder```: name or filepath of the inputs folder.
-- ```outputsFolder```: name or filepath of the outputs folder.
+- ```outputsFolder```: name or filepath of the outputs folder, default value is ```UMIc_output```.
  
-The input data must be provided in fastq files and it is assumed that the UMI is placed at the beginning of each sequence. The input files can belong to different experiments, but must belong to the same library and fulfil the same input parameters described above.
+The input data must be provided in fastq files and it is assumed that the UMI is placed at the beginning of each sequence. The library preparation step of the input files must be genarated using the same protocol and fulfil the same input parameters described above.
 
 
 ### Outputs 
 The output data are stored also in fastq files, named the same as the input files with an added ```_corrected``` suffix and the name of the folder can be provided by the user. The files contain the corrected sequences (without the UMI) and their quality. It is worth mentioning that the new sequence ID is constructed by combining the ID of one of the input sequences, that has that same UMI, and the UMI itself.
 
-The framework also produces a ```summary_table.csv``` with all the information of the output fastq files and extra information, that can help return from the output sequences to their corresponding input sequences.
+The framework also produces a csv file with all the information of the output fastq files and extra information, that can help return from the output sequences to their corresponding input sequences. The file is named the same as the Read1 fastq file with an added ```_summary_table``` suffix.
 
 For more details, please refer to the wiki [Running the project](https://github.com/mcmaniou/projectUMIs/wiki/Running-the-project) page.
 
